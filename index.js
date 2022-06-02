@@ -113,12 +113,13 @@ async function main() {
         } catch (error) {
             console.log(error)
         }
-    console.log(`Query ${i}/${data.length} done ---------------------------------------------------`)
+    console.log(`Query ${i}/${data.length - 1} done ---------------------------------------------------`)
     console.log('\n\n')
   }
 
 
   await FriggTweets.Create(newTweets)
+  console.log(newTweets.length + ' tweets added to database')
   console.log('Posting to Supabase...')
   console.log('Done!')
 }
